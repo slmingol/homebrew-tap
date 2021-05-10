@@ -1,15 +1,15 @@
-# homebrew-tap [![Powered By: GoReleaser](https://img.shields.io/badge/powered%20by-goreleaser-green.svg?style=flat-square)](https://github.com/goreleaser)
+## homebrew-tap [![Powered By: GoReleaser](https://img.shields.io/badge/powered%20by-goreleaser-green.svg?style=flat-square)](https://github.com/goreleaser)
 
 Homebrew Formulae to @gorelease_ex binaries, powered by @goreleaser
 
-## Installation
+### Installation
 ```sh
 $ brew install slmingol/tap/gorelease_ex
 ```
 
-## Examples
+### Examples
 
-### Install
+#### Install
 ```sh
 $ brew install slmingol/tap/gorelease_ex
 ==> Tapping slmingol/tap
@@ -38,7 +38,7 @@ Tapped 1 formula (27 files, 28.5KB).
 🍺  /usr/local/Cellar/gorelease_ex/0.0.50: 4 files, 1.6MB, built in 4 seconds
 ```
 
-### Upgrade
+#### Upgrade
 ```sh
 $ $ brew upgrade slmingol/tap/gorelease_ex
 Updating Homebrew...
@@ -63,19 +63,19 @@ Removing: /usr/local/Cellar/gorelease_ex/0.0.50... (4 files, 1.6MB)
 Removing: /Users/smingolelli/Library/Caches/Homebrew/gorelease_ex--0.0.50.tar.gz... (636.5KB)
 ```
 
-### Uninstall
+#### Uninstall
 ```sh
 $ brew uninstall gorelease_ex
 Uninstalling /usr/local/Cellar/gorelease_ex/0.0.52... (4 files, 1.6MB)
 ```
 
-### Search
+#### Search
 ```sh
 $ brew search gorelease_ex
 ==> Formulae
 slmingol/tap/gorelease_ex ✔
 ```
 
-## References
+### References
 - [gorelease_ex]()https://github.com/slmingol/gorelease_ex)
 - [GoReleaser - Homebrew](https://goreleaser.com/customization/homebrew/)
