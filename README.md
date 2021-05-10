@@ -35,3 +35,7 @@ Tapped 1 formula (27 files, 28.5KB).
 ==> Installing slmingol/tap/gorelease_ex
 🍺  /usr/local/Cellar/gorelease_ex/0.0.50: 4 files, 1.6MB, built in 4 seconds
 ```
+
+### References
+- [gorelease_ex]()https://github.com/slmingol/gorelease_ex)
+- [GoReleaser - Homebrew](https://goreleaser.com/customization/homebrew/)
