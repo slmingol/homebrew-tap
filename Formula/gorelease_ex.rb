@@ -5,20 +5,21 @@
 class GoreleaseEx < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://www.github.com/slmingol/gorlease_ex"
-  version "0.0.54"
+  version "0.0.55"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.54/gorelease_ex_0.0.54_Darwin_x86_64.tar.gz"
-    sha256 "ca6fe5d1b874e595cd07bdd0c7d5451bed5909a85ccab8cd4fd2c8db0a1a3ff0"
+    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.55/gorelease_ex_0.0.55_Darwin_x86_64.tar.gz"
+    sha256 "87abd806118937645d1ac56a46096b6abc42b4daa0151bc322cf4988a70e6627"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.54/gorelease_ex_0.0.54_Linux_x86_64.tar.gz"
-    sha256 "51a0797526473e906fd05e742dee6e75c056c60d4e79780f32f2feb1220a3695"
+    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.55/gorelease_ex_0.0.55_Linux_x86_64.tar.gz"
+    sha256 "a56b4a1f44cd142497b46e26cb06313b3e329603b213fbf54a5fa68d8023ae45"
   end
 
   depends_on "go"
+  depends_on "coreutils"
 
   def install
     bin.install "gorelease_ex"
