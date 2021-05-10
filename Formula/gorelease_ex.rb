@@ -11,11 +11,11 @@ class GoreleaseEx < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.53/gorelease_ex_0.0.53_Darwin_x86_64.tar.gz"
-    sha256 "0e0f9c6fd5a652b3864aaa7204eabe5ece2e45675b7ef6c78ad949a7681251b6"
+    sha256 "827ed53a52c37882c7d58bec6a9d584738259e66b00c1a22381e9068039185e2"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.53/gorelease_ex_0.0.53_Linux_x86_64.tar.gz"
-    sha256 "524bc7bcd2a1d8c6201e1fd4bccd03b46fa622e2f1b6c1dd952596651c873e4d"
+    sha256 "4ce488391376d75e96783b4ffac7d7098bebaa87947a6491ac94b462ca701081"
   end
 
   depends_on "go"
