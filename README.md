@@ -38,42 +38,36 @@ Tapped 1 formula (27 files, 28.5KB).
 🍺  /usr/local/Cellar/gorelease_ex/0.0.50: 4 files, 1.6MB, built in 4 seconds
 ```
 
-#### Upgrade
-```sh
-$ brew upgrade slmingol/tap/gorelease_ex
-Updating Homebrew...
-==> Auto-updated Homebrew!
-Updated 3 taps (homebrew/cask-versions, homebrew/cask and slmingol/tap).
-==> Updated Formulae
-Updated 1 formula.
-==> New Casks
-usr-sse2-rdm
-==> Updated Casks
-Updated 18 casks.
-==> Deleted Casks
-spideroak-share
-==> Upgrading 1 outdated package:
-slmingol/tap/gorelease_ex 0.0.50 -> 0.0.52
-==> Upgrading slmingol/tap/gorelease_ex 0.0.50 -> 0.0.52
-==> Downloading https://github.com/slmingol/gorelease_ex/releases/download/0.0.52/gorelease_ex_0.0.52_Darwin_x86_64.tar.gz
-==> Downloading from https://github-releases.githubusercontent.com/364463387/e50b0180-b117-11eb-9ec8-ee52b4d58809?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Cre
-######################################################################## 100.0%
-🍺  /usr/local/Cellar/gorelease_ex/0.0.52: 4 files, 1.6MB, built in 4 seconds
-Removing: /usr/local/Cellar/gorelease_ex/0.0.50... (4 files, 1.6MB)
-Removing: /Users/smingolelli/Library/Caches/Homebrew/gorelease_ex--0.0.50.tar.gz... (636.5KB)
-```
-
-#### Uninstall
-```sh
-$ brew uninstall gorelease_ex
-Uninstalling /usr/local/Cellar/gorelease_ex/0.0.52... (4 files, 1.6MB)
-```
-
 #### Search
 ```sh
 $ brew search gorelease_ex
 ==> Formulae
 slmingol/tap/gorelease_ex ✔
+```
+
+#### Upgrade
+```sh
+$ brew upgrade gorelease_ex
+Updating Homebrew...
+==> Auto-updated Homebrew!
+Updated 1 tap (slmingol/tap).
+==> Updated Formulae
+Updated 1 formula.
+
+==> Upgrading 1 outdated package:
+slmingol/tap/gorelease_ex 0.0.50 -> 0.0.53
+==> Upgrading slmingol/tap/gorelease_ex 0.0.50 -> 0.0.53
+==> Downloading https://github.com/slmingol/gorelease_ex/releases/download/0.0.53/gorelease_ex_0.0.53_Darwin_x86_64.tar.gz
+==> Downloading from https://github-releases.githubusercontent.com/364463387/7bd8bd80-b11a-11eb-9286-b282cb905804?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Cre
+######################################################################## 100.0%
+🍺  /usr/local/Cellar/gorelease_ex/0.0.53: 4 files, 1.6MB, built in 4 seconds
+Removing: /usr/local/Cellar/gorelease_ex/0.0.50... (4 files, 1.6MB)
+Removing: /Users/smingolelli/Library/Caches/Homebrew/gorelease_ex--0.0.50.tar.gz... (636.5KB)
+```
+#### Uninstall
+```sh
+$ brew uninstall gorelease_ex
+Uninstalling /usr/local/Cellar/gorelease_ex/0.0.53... (4 files, 1.6MB)
 ```
 
 ### References
