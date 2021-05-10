@@ -40,7 +40,7 @@ Tapped 1 formula (27 files, 28.5KB).
 
 #### Upgrade
 ```sh
-$ $ brew upgrade slmingol/tap/gorelease_ex
+$ brew upgrade slmingol/tap/gorelease_ex
 Updating Homebrew...
 ==> Auto-updated Homebrew!
 Updated 3 taps (homebrew/cask-versions, homebrew/cask and slmingol/tap).
