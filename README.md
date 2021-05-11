@@ -71,5 +71,5 @@ Uninstalling /usr/local/Cellar/gorelease_ex/0.0.53... (4 files, 1.6MB)
 ```
 
 ### References
-- [gorelease_ex]()https://github.com/slmingol/gorelease_ex)
+- [gorelease_ex](https://github.com/slmingol/gorelease_ex)
 - [GoReleaser - Homebrew](https://goreleaser.com/customization/homebrew/)
