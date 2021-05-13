@@ -5,17 +5,17 @@
 class GoreleaseEx < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://www.github.com/slmingol/gorlease_ex"
-  version "0.0.95"
+  version "0.0.96"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.95/gorelease_ex_0.0.95_Darwin_x86_64.tar.gz"
-    sha256 "67a7fcca7b641f6fb7588dbe67e1808dd3f7721291c192d4363370d407b475c5"
+    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.96/gorelease_ex_0.0.96_Darwin_x86_64.tar.gz"
+    sha256 "11989e92caadff6cd9f81c57494cd2e292580d0cc5a1833f582820e206a7208d"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.95/gorelease_ex_0.0.95_Linux_x86_64.tar.gz"
-    sha256 "98d267767d8abbd0b8c31f7884656ee511c0dff557f04f792bf67859d0ad8be6"
+    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.96/gorelease_ex_0.0.96_Linux_x86_64.tar.gz"
+    sha256 "a39d047d4e15c36df3355339a30db0d1a55df1c852b9c34ba848b7653f2167c2"
   end
 
   depends_on "go"
