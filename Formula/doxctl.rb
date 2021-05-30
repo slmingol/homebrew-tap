@@ -5,17 +5,17 @@
 class Doxctl < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://www.github.com/slmingol/doxctl"
-  version "0.0.20-alpha"
+  version "0.0.21-alpha"
   license "MIT"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/doxctl/releases/download/0.0.20-alpha/doxctl_0.0.20-alpha_Darwin_x86_64.tar.gz"
-    sha256 "00a8e53cff67509291149deaccbc3b0b362c6ff230d561991a0975d9e9128cc5"
+    url "https://github.com/slmingol/doxctl/releases/download/0.0.21-alpha/doxctl_0.0.21-alpha_Darwin_x86_64.tar.gz"
+    sha256 "9077fadc2e4994008741fccf640d124f128ab5104ac3558bb07ca5898c3bfc0d"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/doxctl/releases/download/0.0.20-alpha/doxctl_0.0.20-alpha_Linux_x86_64.tar.gz"
-    sha256 "4dbd85fb69697c7839cd9f3a621bdb1c242877926d12a288916884f0b1437b30"
+    url "https://github.com/slmingol/doxctl/releases/download/0.0.21-alpha/doxctl_0.0.21-alpha_Linux_x86_64.tar.gz"
+    sha256 "bb86134af13434b453fc973552a80ef1eadf3b810cc1db6ed63669cd9d5616c6"
   end
 
   depends_on "go"
