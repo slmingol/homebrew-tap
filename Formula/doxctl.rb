@@ -5,26 +5,22 @@
 class Doxctl < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://www.github.com/slmingol/doxctl"
-  version "0.0.32-alpha"
+  version "0.0.33-alpha"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/0.0.32-alpha/doxctl_0.0.32-alpha_Darwin_x86_64.tar.gz"
-      sha256 "ed6652a493fd860777a37e512e1b33d7f5064342c3f25d7ab6cec090ac6cd733"
+      url "https://github.com/slmingol/doxctl/releases/download/0.0.33-alpha/doxctl_0.0.33-alpha_Darwin_x86_64.tar.gz"
+      sha256 "bbc96c759a5e8c7f214eff1e965205c52b5b2301388d547642aa58121a6697fe"
     end
-
-    depends_on arch: [:x86_64]
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/0.0.32-alpha/doxctl_0.0.32-alpha_Linux_x86_64.tar.gz"
-      sha256 "b7ded61a22ef94200301d7b11ef443f0c4b3c01cc5ce57174a4fa379a772c648"
+      url "https://github.com/slmingol/doxctl/releases/download/0.0.33-alpha/doxctl_0.0.33-alpha_Linux_x86_64.tar.gz"
+      sha256 "a12eb11af9b2ab153b32f5755e3449dd59ee82d92846ac7330396a9d43c5028c"
     end
-
-    depends_on arch: [:x86_64]
   end
 
   depends_on "go"
