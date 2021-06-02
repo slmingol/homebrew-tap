@@ -5,21 +5,21 @@
 class Doxctl < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://www.github.com/slmingol/doxctl"
-  version "0.0.36-alpha"
+  version "0.0.37-alpha"
   license "MIT"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/0.0.36-alpha/doxctl_0.0.36-alpha_Darwin_x86_64.tar.gz"
-      sha256 "cea6b21418b5bca8b76ac93bdd85676329fc955886ddffee0327badb087de8b1"
+      url "https://github.com/slmingol/doxctl/releases/download/0.0.37-alpha/doxctl_0.0.37-alpha_Darwin_x86_64.tar.gz"
+      sha256 "e2eb3f38960aa17493df3592f5bf299eb61ea0077d6a08a0bdff951c9e9cfc3f"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/0.0.36-alpha/doxctl_0.0.36-alpha_Linux_x86_64.tar.gz"
-      sha256 "0df55dfdbf130d6f9794243789e29cf1667564db638906b87e092bce0ecc4b29"
+      url "https://github.com/slmingol/doxctl/releases/download/0.0.37-alpha/doxctl_0.0.37-alpha_Linux_x86_64.tar.gz"
+      sha256 "bb434c1a753ba2a16e5d6a485370726df9e1dac1e876b85d64c629041a14ca88"
     end
   end
 
