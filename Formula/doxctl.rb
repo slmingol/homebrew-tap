@@ -5,30 +5,41 @@
 class Doxctl < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://www.github.com/slmingol/doxctl"
-  version "0.0.52-alpha"
+  version "0.0.56-alpha"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/0.0.52-alpha/doxctl_0.0.52-alpha_Darwin_x86_64.tar.gz"
-      sha256 "c03cbf1dea19ed69ddd351f0e43ef7491caded65ae740cb54f7c965de9435ca1"
+    url "https://github.com/slmingol/doxctl/releases/download/0.0.56-alpha/doxctl_0.0.56-alpha_Darwin_x86_64.tar.gz"
+    sha256 "df5372a3ee0551212309bc0bd29ea6547276c2bf0ef72c37507231e6127338f4"
+
+    def install
+      bin.install "doxctl"
+    end
+
+    if Hardware::CPU.arm?
+      def caveats
+        <<~EOS
+          The darwin_arm64 architecture is not supported for the Doxctl
+          formula at this time. The darwin_amd64 binary may work in compatibility
+          mode, but it might not be fully supported.
+        EOS
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/0.0.52-alpha/doxctl_0.0.52-alpha_Linux_x86_64.tar.gz"
-      sha256 "9339600cb507f6e20d3e13dc2512a7184e54c50e7ee523c1988c5fedffbe2aad"
+      url "https://github.com/slmingol/doxctl/releases/download/0.0.56-alpha/doxctl_0.0.56-alpha_Linux_x86_64.tar.gz"
+      sha256 "306bb15b1afadc0481fea2a8e626a40a7a08b386c5f49711b53a4e697cc5dcc8"
+
+      def install
+        bin.install "doxctl"
+      end
     end
   end
 
   depends_on "go"
   depends_on "coreutils"
-
-  def install
-    bin.install "doxctl"
-  end
 
   test do
     system "#{bin}/doxctl"
