@@ -5,12 +5,12 @@
 class Gauth < Formula
   desc "Command line 2FA Authentication"
   homepage "https://www.github.com/slmingol/gauth"
-  version "1.03"
+  version "1.04"
   license "MIT"
 
   on_macos do
-    url "https://github.com/slmingol/gauth/releases/download/v1.03/gauth_1.03_Darwin_x86_64.tar.gz"
-    sha256 "bf99464d393c27c987d2a9e39a937e20bc5f95356b535b493e12ec5887885fd1"
+    url "https://github.com/slmingol/gauth/releases/download/v1.04/gauth_1.04_Darwin_x86_64.tar.gz"
+    sha256 "202a2643b85bc961dd1522c1adf6ece38392c79894bbb25a9028bba066448662"
 
     def install
       bin.install "gauth"
@@ -29,8 +29,8 @@ class Gauth < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/gauth/releases/download/v1.03/gauth_1.03_Linux_x86_64.tar.gz"
-      sha256 "acb68d146159e8beadadaf137327f9511f498236a612a864a0a7cc6a79db6f62"
+      url "https://github.com/slmingol/gauth/releases/download/v1.04/gauth_1.04_Linux_x86_64.tar.gz"
+      sha256 "806a6ac270cf045fe382e8fe79b6a585ce018d74601d47ce7f8d21232158ab84"
 
       def install
         bin.install "gauth"
