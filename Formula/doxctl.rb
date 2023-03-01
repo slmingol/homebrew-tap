@@ -5,15 +5,15 @@
 class Doxctl < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://www.github.com/slmingol/doxctl"
-  version "0.0.57-alpha"
+  version "0.0.58-alpha"
   license "MIT"
 
   depends_on "go"
   depends_on "coreutils"
 
   on_macos do
-    url "https://github.com/slmingol/doxctl/releases/download/0.0.57-alpha/doxctl_0.0.57-alpha_Darwin_x86_64.tar.gz"
-    sha256 "d2e1a87e7bd3e674861a3eb0f28683fa4204f9bd0f6cc0dff8733a931a048ba0"
+    url "https://github.com/slmingol/doxctl/releases/download/0.0.58-alpha/doxctl_0.0.58-alpha_Darwin_x86_64.tar.gz"
+    sha256 "4f959e20eb9afce4494e154990f99b84c206b5eb971e824555917a1d7320deb0"
 
     def install
       bin.install "doxctl"
@@ -32,8 +32,8 @@ class Doxctl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/0.0.57-alpha/doxctl_0.0.57-alpha_Linux_x86_64.tar.gz"
-      sha256 "964905a5610afe1deaa9872089cf1c9b429467dea54ba94b880a521c73670a17"
+      url "https://github.com/slmingol/doxctl/releases/download/0.0.58-alpha/doxctl_0.0.58-alpha_Linux_x86_64.tar.gz"
+      sha256 "581dfb52d2058a5bb5495fb1ff7c1f940b37c8f3715ae168af86cbf4a0930263"
 
       def install
         bin.install "doxctl"
