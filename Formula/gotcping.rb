@@ -5,35 +5,43 @@
 class Gotcping < Formula
   desc "Yet another tcping for golang."
   homepage "https://www.github.com/slmingol/gotcping"
-  version "0.0.3-alpha"
+  version "0.0.4-alpha"
   license "MIT"
 
   depends_on "go"
   depends_on "coreutils"
 
   on_macos do
-    url "https://github.com/slmingol/gotcping/releases/download/0.0.3-alpha/gotcping_0.0.3-alpha_Darwin_x86_64.tar.gz"
-    sha256 "3b71503afa8d6c013a702e8681961286d1565f63d2dfdca4346f8a3af5eedcab"
-
-    def install
-      bin.install "gotcping"
-    end
-
     if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Gotcping
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
+      url "https://github.com/slmingol/gotcping/releases/download/0.0.4-alpha/gotcping_0.0.4-alpha_Darwin_arm64.tar.gz"
+      sha256 "d076de73dc7541c87bcba6ad6fffb5f8bdec567fa930e63f92bed460feb6879d"
+
+      def install
+        bin.install "gotcping"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/slmingol/gotcping/releases/download/0.0.4-alpha/gotcping_0.0.4-alpha_Darwin_x86_64.tar.gz"
+      sha256 "a37fe2596d0029c34a423b45f8c6ba6fe6841eda0597c5efed7c14cc36a64735"
+
+      def install
+        bin.install "gotcping"
       end
     end
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/slmingol/gotcping/releases/download/0.0.4-alpha/gotcping_0.0.4-alpha_Linux_arm64.tar.gz"
+      sha256 "15a1dd1652f55f410e8d1148c4ae11fdc0b31b681452c446b3e5410d3fd348b4"
+
+      def install
+        bin.install "gotcping"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/gotcping/releases/download/0.0.3-alpha/gotcping_0.0.3-alpha_Linux_x86_64.tar.gz"
-      sha256 "b975cdadb93e7e90154855f396a7dbf413bbddcad56c5fbce26d3c351187d7d8"
+      url "https://github.com/slmingol/gotcping/releases/download/0.0.4-alpha/gotcping_0.0.4-alpha_Linux_x86_64.tar.gz"
+      sha256 "b9ec1efdca9f96c05406c85e380c1405013346a05e4cbce6e9091819f32a6097"
 
       def install
         bin.install "gotcping"
