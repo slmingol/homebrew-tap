@@ -5,7 +5,7 @@
 class Doxctl < Formula
   desc "Diagnostic CLI tool for VPN & DNS connectivity troubleshooting"
   homepage "https://www.github.com/slmingol/doxctl"
-  version "1.0.1"
+  version "1.0.13"
   license "MIT"
 
   depends_on "coreutils"
@@ -13,16 +13,16 @@ class Doxctl < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Darwin_x86_64.tar.gz"
-      sha256 "527cf82985bdba0888228668e8d648d79c5d9764e1c978fcf74a726b5a9d430b"
+      url "https://github.com/slmingol/doxctl/releases/download/1.0.13/doxctl_Darwin_x86_64.tar.gz"
+      sha256 "e271b1abd7de5f2fe223af38038cba57d746e58ea3b26d2864330a9c545e5c84"
 
       define_method(:install) do
         bin.install "doxctl"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Darwin_arm64.tar.gz"
-      sha256 "080e40474e17bfb52361c59c8ea5391cf0a4f2742c7b5d825bf9334aa20dbc06"
+      url "https://github.com/slmingol/doxctl/releases/download/1.0.13/doxctl_Darwin_arm64.tar.gz"
+      sha256 "6b6d9976162613bcd219c87566f91c3cb93d1789c7d2c2eaed2af8fd6def194e"
 
       define_method(:install) do
         bin.install "doxctl"
@@ -32,15 +32,15 @@ class Doxctl < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Linux_x86_64.tar.gz"
-      sha256 "083194e9afac5812fc0fb0a28f242a7062341c0a5f6b10898f435f4d1efc9c4d"
+      url "https://github.com/slmingol/doxctl/releases/download/1.0.13/doxctl_Linux_x86_64.tar.gz"
+      sha256 "d9ed2d2081339a5d1afa99dde26d2d0386917cca2e06c0f4d4d359daa8d703ee"
       define_method(:install) do
         bin.install "doxctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Linux_arm64.tar.gz"
-      sha256 "66b17832d6acb96de5ee414e69aaa40583260a5e58643797490f18539dff5b60"
+      url "https://github.com/slmingol/doxctl/releases/download/1.0.13/doxctl_Linux_arm64.tar.gz"
+      sha256 "e6f8f175b1ac9fee149ce7689ce2b6c58acbf76bcb34d3d7f4df2fed8c0685e0"
       define_method(:install) do
         bin.install "doxctl"
       end
