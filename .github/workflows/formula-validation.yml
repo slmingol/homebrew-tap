@@ -23,8 +23,11 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
+      - name: Tap this repository
+        run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
+
       - name: Audit formulas
-        run: brew audit --strict Formula/*.rb
+        run: brew audit --strict slmingol/homebrew-tap/gauth slmingol/homebrew-tap/doxctl slmingol/homebrew-tap/gotcping slmingol/homebrew-tap/gorelease_ex
 
   test:
     name: Install & Test (${{ matrix.formula }}) / ${{ matrix.os }}
