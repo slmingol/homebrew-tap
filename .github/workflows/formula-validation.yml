@@ -1,0 +1,54 @@
+name: Formula Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Formula/**'
+  pull_request:
+    paths:
+      - 'Formula/**'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  audit:
+    name: Brew Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Audit formulas
+        run: brew audit --strict Formula/*.rb
+
+  test:
+    name: Install & Test (${{ matrix.formula }}) / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, macos-13]
+        formula: [gauth, doxctl, gotcping, gorelease_ex]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tap this repository
+        run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
+
+      - name: Install formula
+        run: brew install --verbose slmingol/homebrew-tap/${{ matrix.formula }}
+
+      - name: Run brew test
+        run: brew test --verbose slmingol/homebrew-tap/${{ matrix.formula }}
+
+      - name: Verify binary in PATH
+        run: command -v ${{ matrix.formula }}
+
+      - name: Check for broken dependencies
+        run: brew missing slmingol/homebrew-tap/${{ matrix.formula }} || true
