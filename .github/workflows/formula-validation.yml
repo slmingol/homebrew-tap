@@ -27,6 +27,8 @@ jobs:
         run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
 
       - name: Audit formulas
+        env:
+          HOMEBREW_DEVELOPER: "1"
         run: brew audit --strict slmingol/homebrew-tap/gauth slmingol/homebrew-tap/doxctl slmingol/homebrew-tap/gotcping slmingol/homebrew-tap/gorelease_ex
 
   test:
