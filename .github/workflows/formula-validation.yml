@@ -14,16 +14,14 @@ on:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  HOMEBREW_NO_INSTALL_FROM_API: "1"
 
 jobs:
   audit:
     name: Brew Audit
-    runs-on: ubuntu-latest
+    runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
 
       - name: Tap this repository
         run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
@@ -34,20 +32,15 @@ jobs:
       - name: Audit formulas
         env:
           HOMEBREW_DEVELOPER: "1"
-          HOMEBREW_NO_INSTALL_FROM_API: "1"
         run: brew audit --strict slmingol/homebrew-tap/gauth slmingol/homebrew-tap/doxctl slmingol/homebrew-tap/gotcping slmingol/homebrew-tap/gorelease_ex
 
   test:
-    name: Install & Test (${{ matrix.formula }}) / ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Install & Test (${{ matrix.formula }})
+    runs-on: macos-13
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest]
         formula: [gauth, doxctl, gotcping, gorelease_ex]
-
-    env:
-      HOMEBREW_NO_INSTALL_FROM_API: "1"
 
     steps:
       - uses: actions/checkout@v4
