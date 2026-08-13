@@ -31,6 +31,7 @@ jobs:
       - name: Audit formulas
         env:
           HOMEBREW_DEVELOPER: "1"
+          HOMEBREW_NO_INSTALL_FROM_API: "1"
         run: brew audit --strict slmingol/homebrew-tap/gauth slmingol/homebrew-tap/doxctl slmingol/homebrew-tap/gotcping slmingol/homebrew-tap/gorelease_ex
 
   test:
@@ -42,17 +43,23 @@ jobs:
         os: [macos-latest]
         formula: [gauth, doxctl, gotcping, gorelease_ex]
 
+    env:
+      HOMEBREW_NO_INSTALL_FROM_API: "1"
+
     steps:
       - uses: actions/checkout@v4
 
+      - name: Tap this repository
+        run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
+
       - name: Install formula
-        run: brew install --verbose "${{ github.workspace }}/Formula/${{ matrix.formula }}.rb"
+        run: brew install --verbose slmingol/homebrew-tap/${{ matrix.formula }}
 
       - name: Run brew test
-        run: brew test --verbose "${{ matrix.formula }}"
+        run: brew test --verbose slmingol/homebrew-tap/${{ matrix.formula }}
 
       - name: Verify binary in PATH
         run: command -v ${{ matrix.formula }}
 
       - name: Check for broken dependencies
-        run: brew missing "${{ matrix.formula }}" || true
+        run: brew missing slmingol/homebrew-tap/${{ matrix.formula }} || true
