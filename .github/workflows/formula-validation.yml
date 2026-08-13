@@ -28,6 +28,9 @@ jobs:
       - name: Tap this repository
         run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
 
+      - name: Trust tap
+        run: brew trust slmingol/homebrew-tap
+
       - name: Audit formulas
         env:
           HOMEBREW_DEVELOPER: "1"
@@ -51,6 +54,9 @@ jobs:
 
       - name: Tap this repository
         run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
+
+      - name: Trust tap
+        run: brew trust slmingol/homebrew-tap
 
       - name: Install formula
         run: brew install --verbose slmingol/homebrew-tap/${{ matrix.formula }}
