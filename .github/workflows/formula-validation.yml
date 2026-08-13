@@ -5,9 +5,11 @@ on:
     branches: [main]
     paths:
       - 'Formula/**'
+      - '.github/workflows/formula-validation.yml'
   pull_request:
     paths:
       - 'Formula/**'
+      - '.github/workflows/formula-validation.yml'
   workflow_dispatch:
 
 env:
