@@ -7,19 +7,20 @@ class GoreleaseEx < Formula
   homepage "https://github.com/slmingol/gorelease_ex"
   version "0.0.113"
   license "MIT"
-  bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.113/gorelease_ex_0.0.113_Darwin_x86_64.tar.gz"
-    sha256 "4e4c94557a508052402960adb4f49fee813acdae860fd43cd9aadc338157f062"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.113/gorelease_ex_0.0.113_Linux_x86_64.tar.gz"
-    sha256 "b69913aa414691be624a56104468fdb56249c22e9b33836ea0efce3d54627b37"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.113/gorelease_ex_0.0.113_Darwin_x86_64.tar.gz"
+      sha256 "4e4c94557a508052402960adb4f49fee813acdae860fd43cd9aadc338157f062"
+    end
   end
 
-  depends_on "go"
-  depends_on "coreutils"
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.113/gorelease_ex_0.0.113_Linux_x86_64.tar.gz"
+      sha256 "b69913aa414691be624a56104468fdb56249c22e9b33836ea0efce3d54627b37"
+    end
+  end
 
   def install
     bin.install "gorelease_ex"

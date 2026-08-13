@@ -38,17 +38,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Tap this repository
-        run: brew tap slmingol/homebrew-tap "${{ github.workspace }}"
-
       - name: Install formula
-        run: brew install --verbose slmingol/homebrew-tap/${{ matrix.formula }}
+        run: brew install --verbose "${{ github.workspace }}/Formula/${{ matrix.formula }}.rb"
 
       - name: Run brew test
-        run: brew test --verbose slmingol/homebrew-tap/${{ matrix.formula }}
+        run: brew test --verbose "${{ matrix.formula }}"
 
       - name: Verify binary in PATH
         run: command -v ${{ matrix.formula }}
 
       - name: Check for broken dependencies
-        run: brew missing slmingol/homebrew-tap/${{ matrix.formula }} || true
+        run: brew missing "${{ matrix.formula }}" || true

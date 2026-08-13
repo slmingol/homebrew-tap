@@ -8,9 +8,6 @@ class Gauth < Formula
   version "1.05"
   license "MIT"
 
-  depends_on "go"
-  depends_on "coreutils"
-
   on_macos do
     url "https://github.com/slmingol/gauth/releases/download/v1.05/gauth_1.05_Darwin_x86_64.tar.gz"
     sha256 "538f5ee494e17db0afc57379e0af9bf187d9d504fc6b0f66c9f8c34cf4e14a2d"

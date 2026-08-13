@@ -8,9 +8,6 @@ class Gotcping < Formula
   version "0.0.5-alpha"
   license "MIT"
 
-  depends_on "go"
-  depends_on "coreutils"
-
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/slmingol/gotcping/releases/download/0.0.5-alpha/gotcping_0.0.5-alpha_Darwin_arm64.tar.gz"

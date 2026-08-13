@@ -8,42 +8,29 @@ class Doxctl < Formula
   version "1.0.1"
   license "MIT"
 
-  depends_on "coreutils"
-  depends_on "go"
-
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Darwin_x86_64.tar.gz"
       sha256 "a60e351149de7341e281189cb60f5a160c033aa430b3d058b8353e0ca377db9c"
-
-      define_method(:install) do
-        bin.install "doxctl"
-      end
     end
     if Hardware::CPU.arm?
       url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Darwin_arm64.tar.gz"
       sha256 "5360971eaf93a03e2fa094f2e49cabcb4a34af318ca048ed08da8a36b2ed0801"
-
-      define_method(:install) do
-        bin.install "doxctl"
-      end
     end
+  end
+
+  def install
+    bin.install "doxctl"
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Linux_x86_64.tar.gz"
       sha256 "73f0184e96d59c23a14299803c00fb8623d75fbbe166a37b0013a3dcbd2c292a"
-      define_method(:install) do
-        bin.install "doxctl"
-      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Linux_arm64.tar.gz"
       sha256 "9a7d5ae3a9ac196c80fd27ead4bd1bbbe32fb478327dea459bcd0e6082224d35"
-      define_method(:install) do
-        bin.install "doxctl"
-      end
     end
   end
 
