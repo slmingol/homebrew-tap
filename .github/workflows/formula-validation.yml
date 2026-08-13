@@ -39,6 +39,10 @@ jobs:
           HOMEBREW_DEVELOPER: "1"
         run: brew audit --strict slmingol/homebrew-tap/gauth slmingol/homebrew-tap/doxctl slmingol/homebrew-tap/gotcping slmingol/homebrew-tap/gorelease_ex
 
+      - name: Cleanup tap
+        if: always()
+        run: brew untap slmingol/homebrew-tap || true
+
   test:
     name: Install & Test (${{ matrix.formula }})
     runs-on: macos-13
