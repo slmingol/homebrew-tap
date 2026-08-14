@@ -41,7 +41,9 @@ jobs:
 
       - name: Cleanup tap
         if: always()
-        run: brew untap slmingol/homebrew-tap || true
+        run: |
+          brew untap slmingol/homebrew-tap 2>/dev/null || true
+          rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/slmingol 2>/dev/null || true
 
   test:
     name: Install & Test (${{ matrix.formula }})

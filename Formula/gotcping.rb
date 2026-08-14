@@ -9,41 +9,29 @@ class Gotcping < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
+    on_arm do
       url "https://github.com/slmingol/gotcping/releases/download/0.0.5-alpha/gotcping_0.0.5-alpha_Darwin_arm64.tar.gz"
       sha256 "d5fc69766803b9fc5dc1228d4c046dc9d73f3e65bfa56f50f4ddb101cf978e5e"
-
-      def install
-        bin.install "gotcping"
-      end
     end
-    if Hardware::CPU.intel?
+    on_intel do
       url "https://github.com/slmingol/gotcping/releases/download/0.0.5-alpha/gotcping_0.0.5-alpha_Darwin_x86_64.tar.gz"
       sha256 "7e4b00cfb9ee09ec5b0f1c498eddc18636fd9f504872c5f31c85b2f0a0b3d6dd"
-
-      def install
-        bin.install "gotcping"
-      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    on_arm do
       url "https://github.com/slmingol/gotcping/releases/download/0.0.5-alpha/gotcping_0.0.5-alpha_Linux_arm64.tar.gz"
       sha256 "ae09906ef36da78af451cbbdc7bb9bfa9d868fdfcb891249ebd4ca7dcf62c1e2"
-
-      def install
-        bin.install "gotcping"
-      end
     end
-    if Hardware::CPU.intel?
+    on_intel do
       url "https://github.com/slmingol/gotcping/releases/download/0.0.5-alpha/gotcping_0.0.5-alpha_Linux_x86_64.tar.gz"
       sha256 "7864006fddbbb9390ea818bcb6a81ea1f44742f42347a11f49a64ab859e90448"
-
-      def install
-        bin.install "gotcping"
-      end
     end
+  end
+
+  def install
+    bin.install "gotcping"
   end
 
   test do

@@ -5,7 +5,6 @@
 class GoreleaseEx < Formula
   desc "Example project demonstrating GoReleaser release automation workflows"
   homepage "https://github.com/slmingol/gorelease_ex"
-  version "0.0.113"
   license "MIT"
 
   on_macos do

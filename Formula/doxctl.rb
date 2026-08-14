@@ -5,7 +5,6 @@
 class Doxctl < Formula
   desc "Diagnostic CLI tool for VPN & DNS connectivity troubleshooting"
   homepage "https://github.com/slmingol/doxctl"
-  version "1.0.1"
   license "MIT"
 
   on_macos do
@@ -19,10 +18,6 @@ class Doxctl < Formula
     end
   end
 
-  def install
-    bin.install "doxctl"
-  end
-
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/slmingol/doxctl/releases/download/1.0.1/doxctl_Linux_x86_64.tar.gz"
@@ -34,7 +29,11 @@ class Doxctl < Formula
     end
   end
 
+  def install
+    bin.install "doxctl"
+  end
+
   test do
-    system "#{bin}/doxctl --version"
+    system "#{bin}/doxctl", "--version"
   end
 end

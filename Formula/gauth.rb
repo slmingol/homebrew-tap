@@ -5,37 +5,24 @@
 class Gauth < Formula
   desc "Command-line TOTP/2FA authenticator for terminal-based two-factor auth"
   homepage "https://github.com/slmingol/gauth"
-  version "1.05"
   license "MIT"
 
   on_macos do
-    url "https://github.com/slmingol/gauth/releases/download/v1.05/gauth_1.05_Darwin_x86_64.tar.gz"
-    sha256 "538f5ee494e17db0afc57379e0af9bf187d9d504fc6b0f66c9f8c34cf4e14a2d"
-
-    def install
-      bin.install "gauth"
-    end
-
-    if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Gauth
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
-      end
+    on_intel do
+      url "https://github.com/slmingol/gauth/releases/download/v1.05/gauth_1.05_Darwin_x86_64.tar.gz"
+      sha256 "538f5ee494e17db0afc57379e0af9bf187d9d504fc6b0f66c9f8c34cf4e14a2d"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
+    on_intel do
       url "https://github.com/slmingol/gauth/releases/download/v1.05/gauth_1.05_Linux_x86_64.tar.gz"
       sha256 "398f26d21cfa215ce4a420916b97c791dfe948485ccb087560403b9fb9dc2c1c"
-
-      def install
-        bin.install "gauth"
-      end
     end
+  end
+
+  def install
+    bin.install "gauth"
   end
 
   test do
