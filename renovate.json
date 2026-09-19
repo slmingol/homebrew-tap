@@ -3,6 +3,9 @@
   "extends": [
     "config:recommended"
   ],
+  "ignoreDeps": [
+    "macos"
+  ],
   "packageRules": [
     {
       "matchUpdateTypes": [
