@@ -9,8 +9,8 @@ class GoreleaseEx < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Darwin_amd64.tar.gz"
-      sha256 "7a7872af25ab3da67f5604e0a1af7eda8d036bfdfd722aee15938f229bb20cb8"
+      url "https://github.com/slmingol/gorelease_ex/archive/refs/tags/v0.0.116.tar.gz"
+      sha256 "be00f857777eb96a7065a480acde2e1372a358f5df804fdccde6d161f824dc82"
     end
     on_arm do
       url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Darwin_arm64.tar.gz"
