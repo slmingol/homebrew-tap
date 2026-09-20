@@ -1,0 +1,63 @@
+name: Formula Update
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Update gauth formula
+        id: gauth
+        run: |
+          python3 .github/scripts/update-formula.py \
+            slmingol/gauth Formula/gauth.rb gauth 2>&1 | tee /tmp/gauth.log
+          if grep -q "updated to" /tmp/gauth.log; then
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+            echo "new_tag=$(grep 'updated to' /tmp/gauth.log | grep -oP '(?<=updated to ).*')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update gorelease_ex formula
+        id: gorelease_ex
+        run: |
+          python3 .github/scripts/update-formula.py \
+            slmingol/gorelease_ex Formula/gorelease_ex.rb gorelease_ex 2>&1 | tee /tmp/gorelease_ex.log
+          if grep -q "updated to" /tmp/gorelease_ex.log; then
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+            echo "new_tag=$(grep 'updated to' /tmp/gorelease_ex.log | grep -oP '(?<=updated to ).*')" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open PR if any formula changed
+        if: steps.gauth.outputs.updated == 'true' || steps.gorelease_ex.outputs.updated == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="formula-update-$(date +%Y%m%d%H%M%S)"
+          git checkout -b "$BRANCH"
+          git add Formula/
+
+          MSG="chore: bump formula versions"
+          [ "${{ steps.gauth.outputs.updated }}" = "true" ] && \
+            MSG="$MSG (gauth ${{ steps.gauth.outputs.new_tag }})"
+          [ "${{ steps.gorelease_ex.outputs.updated }}" = "true" ] && \
+            MSG="$MSG (gorelease_ex ${{ steps.gorelease_ex.outputs.new_tag }})"
+
+          git commit -m "$MSG"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --title "$MSG" \
+            --body "Automated formula bump from upstream releases." \
+            --base main \
+            --head "$BRANCH"
