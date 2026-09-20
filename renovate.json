@@ -4,7 +4,9 @@
     "config:recommended"
   ],
   "ignoreDeps": [
-    "macos"
+    "macos",
+    "slmingol/gauth",
+    "slmingol/gorelease_ex"
   ],
   "packageRules": [
     {
