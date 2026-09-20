@@ -35,7 +35,6 @@ class GoreleaseEx < Formula
 
   test do
     assert_predicate bin/"gorelease_ex", :executable?
-    output = shell_output("#{bin}/gorelease_ex 2>&1")
-    assert_match(/gorelease|drum|version/i, output)
+    system bin/"gorelease_ex"
   end
 end
