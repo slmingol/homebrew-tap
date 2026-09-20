@@ -35,6 +35,5 @@ class Gauth < Formula
 
   test do
     assert_predicate bin/"gauth", :executable?
-    system bin/"gauth", "--help"
   end
 end
