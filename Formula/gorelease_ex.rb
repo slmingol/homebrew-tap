@@ -9,23 +9,23 @@ class GoreleaseEx < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Darwin_amd64.tar.gz"
-      sha256 "7a7872af25ab3da67f5604e0a1af7eda8d036bfdfd722aee15938f229bb20cb8"
+      url "https://github.com/slmingol/gorelease_ex/releases/download/v0.0.116/gorelease_ex_0.0.116_Darwin_amd64.tar.gz"
+      sha256 "be5030ff043f9aea4909008c741922a1af70d1835a50b732d1e7ab9455d427b2"
     end
     on_arm do
-      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Darwin_arm64.tar.gz"
-      sha256 "fcc8f4854d59d36347fa3b1c8867bf61b020fedc05618beeef07d9a67838b498"
+      url "https://github.com/slmingol/gorelease_ex/releases/download/v0.0.116/gorelease_ex_0.0.116_Darwin_arm64.tar.gz"
+      sha256 "85395fe0f128e9ef6b9ae79a65465bd20bce5796b84040b422fdceff541001cc"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Linux_amd64.tar.gz"
-      sha256 "abe9bab3184959d59dd698ba4e0e627e2fb7885abe6608036ccd1a79aba05b79"
+      url "https://github.com/slmingol/gorelease_ex/releases/download/v0.0.116/gorelease_ex_0.0.116_Linux_amd64.tar.gz"
+      sha256 "d64467e0ac3af056e944f11c00d2615d1fd20ffb0d65693cc7f4a806e2deb052"
     end
     on_arm do
-      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Linux_arm64.tar.gz"
-      sha256 "9f8f6a58a5661845d176275b82b471e1908b540564fa557976926435d6826b73"
+      url "https://github.com/slmingol/gorelease_ex/releases/download/v0.0.116/gorelease_ex_0.0.116_Linux_arm64.tar.gz"
+      sha256 "1ec4a8ddf9798fbd5a986c09cb26aa5756a9f5d7620eac934ee359b5bc38be57"
     end
   end
 
