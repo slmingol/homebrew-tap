@@ -9,15 +9,23 @@ class Gauth < Formula
 
   on_macos do
     on_intel do
-      url "https://github.com/slmingol/gauth/releases/download/v1.05/gauth_1.05_Darwin_x86_64.tar.gz"
-      sha256 "538f5ee494e17db0afc57379e0af9bf187d9d504fc6b0f66c9f8c34cf4e14a2d"
+      url "https://github.com/slmingol/gauth/releases/download/v1.06/gauth_1.06_Darwin_amd64.tar.gz"
+      sha256 "866c7da304ce9d5a28b0c50ea4d6e4ce42d93fa2bb3ad191d53feac59af7cea0"
+    end
+    on_arm do
+      url "https://github.com/slmingol/gauth/releases/download/v1.06/gauth_1.06_Darwin_arm64.tar.gz"
+      sha256 "693da2d5a7e9fcb372debb4bea38006a959881b7ba90703b86e24554fd8c9514"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/slmingol/gauth/releases/download/v1.05/gauth_1.05_Linux_x86_64.tar.gz"
-      sha256 "398f26d21cfa215ce4a420916b97c791dfe948485ccb087560403b9fb9dc2c1c"
+      url "https://github.com/slmingol/gauth/releases/download/v1.06/gauth_1.06_Linux_amd64.tar.gz"
+      sha256 "47fe9e1c25416ecff15e47af34ace56ed3b694cca3cb72ed556e9fa454282175"
+    end
+    on_arm do
+      url "https://github.com/slmingol/gauth/releases/download/v1.06/gauth_1.06_Linux_arm64.tar.gz"
+      sha256 "574cf713973bd079e7598a257a0f4faa6fced213272eb8310a2bd895076c5ae2"
     end
   end
 

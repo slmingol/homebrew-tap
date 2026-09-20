@@ -8,16 +8,24 @@ class GoreleaseEx < Formula
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.113/gorelease_ex_0.0.113_Darwin_x86_64.tar.gz"
-      sha256 "4e4c94557a508052402960adb4f49fee813acdae860fd43cd9aadc338157f062"
+    on_intel do
+      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Darwin_amd64.tar.gz"
+      sha256 "7a7872af25ab3da67f5604e0a1af7eda8d036bfdfd722aee15938f229bb20cb8"
+    end
+    on_arm do
+      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Darwin_arm64.tar.gz"
+      sha256 "fcc8f4854d59d36347fa3b1c8867bf61b020fedc05618beeef07d9a67838b498"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.113/gorelease_ex_0.0.113_Linux_x86_64.tar.gz"
-      sha256 "b69913aa414691be624a56104468fdb56249c22e9b33836ea0efce3d54627b37"
+    on_intel do
+      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Linux_amd64.tar.gz"
+      sha256 "abe9bab3184959d59dd698ba4e0e627e2fb7885abe6608036ccd1a79aba05b79"
+    end
+    on_arm do
+      url "https://github.com/slmingol/gorelease_ex/releases/download/0.0.114/gorelease_ex_0.0.114_Linux_arm64.tar.gz"
+      sha256 "9f8f6a58a5661845d176275b82b471e1908b540564fa557976926435d6826b73"
     end
   end
 
