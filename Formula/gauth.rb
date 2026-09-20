@@ -35,7 +35,7 @@ class Gauth < Formula
 
   test do
     assert_predicate bin/"gauth", :executable?
-    output = shell_output("#{bin}/gauth 2>&1", 1)
+    output = shell_output("#{bin}/gauth 2>&1")
     assert_match(/usage|gauth|key/i, output)
   end
 end
